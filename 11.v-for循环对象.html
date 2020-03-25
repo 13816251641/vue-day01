@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 这里要注意先是value:key:index的顺序-->
+        <p v-for="(value,key,index) in user">
+            value:{{value}} key:{{key}} index:{{index}}
+        </p>
+    </div>
+</body>
+<script src="lib/vue-2.4.0.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+           user:{
+               id:1,
+               name:"陆捷旎",
+               age:23
+           }
+        },
+    })
+</script>
+</html>

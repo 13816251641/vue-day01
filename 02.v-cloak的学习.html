@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--插值表达式不会替换所有的内容-->
+        <p>++++++{{msg}}------</p>
+        <!-- 插值表达式只会原样输出-->
+        <p>{{msg2}}</p>
+        <!--v-text会替换所有的内容-->
+        <p v-text="msg">+++++------</p>
+        <!--v-text只会原样输出-->
+        <p v-text="msg2"></p>
+        <!-- v-html会将html标签进行转义-->
+        <p v-html="msg2"></p>
+        <!--v-bind: 是vue中,提供的用于绑定属性的指令-->
+        <!--注意: v-bind:指令可以被简写为 :要绑定的属性-->
+        <input type="button" value="按钮" v-bind:title="content+'123'">
+        <!-- vue中提供了v-on:事件绑定机制,快捷键是@click-->
+        <input type="button" :value="tip" v-on:click="show"></input>
+    </div>
+</body>
+<script src="lib/vue-2.4.0.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"123",
+            msg2:"<h3>hello</h3>",
+            content:"content",
+            tip:"点击我会触发事件"
+        },
+        methods:{ //这个methods属性中定义了当前vue实例中所有可用的方法
+            show:function () {
+                alert('hello');
+            }
+        }
+    })
+</script>
+</html>

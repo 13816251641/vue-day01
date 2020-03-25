@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--将来new的Vue实例,会控制这个元素的所有内容-->
+    <!--Vue这个实例所控制的这个元素区域,就是我们的v-->
+    <div id="app">
+        <p>{{msg}}</p>
+    </div>
+</body>
+<script src="lib/vue-2.4.0.js"></script>
+<script>
+   /* 我们new出来的这个vm对象,就是我们MVVM中的vm调度者*/
+    var vm = new Vue({
+        el:"#app",//表示当前我们new出来的这个Vue实例,要控制页面上的哪个区域
+        data:{ //data属性中,存放的是el中要用到的的数据
+            msg:'欢迎学习vue' //vue不提倡我们手动操作DOM元素
+        }
+    })
+</script>
+</html>
